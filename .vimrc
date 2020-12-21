@@ -1,3 +1,6 @@
+syntax on
+set number
+set title
 set history=1000
 set wildmenu
 set cursorline
