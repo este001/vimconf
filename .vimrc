@@ -17,7 +17,7 @@ set bg=dark
 set undofile
 set undodir=/home/estefan/.vimundo/
 set noshowmode
-
+set list lcs=tab:\|\ 
 
 "Auto CMD--------------------------------------------------------------------------- {{{
 
