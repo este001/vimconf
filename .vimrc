@@ -13,7 +13,7 @@ set wildmenu
 set cursorline
 set nowrap
 set laststatus=2
-set hlsearch
+set nohlsearch
 set showmatch
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -22,15 +22,12 @@ set smartcase
 set incsearch
 set bg=dark
 set undofile
+set noswapfile
 set undodir=/home/estefan/.vimundo/
 set noshowmode
+set scrolloff=8
 
-"Test·------------- {{{
-"
-"set list listchars+=space:␣
-"set list listchars=tab:❘\ ,trail:·,extends:»,precedes:«,nbsp:×,space:¬
 let g:indentLine_char = '┊'
-"------------ }}}
 
 "Auto CMD--------------------------------------------------------------------------- {{{
 
@@ -38,27 +35,27 @@ let g:indentLine_char = '┊'
 augroup filetype_yaml
 autocmd!
 autocmd FileType yaml nnoremap <buffer> <localleader>c I#<ESC>
-autocmd FileType yaml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>:noh<CR>
+autocmd FileType yaml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
 augroup filetype_yml
 autocmd!
 autocmd FileType yml nnoremap <buffer> <localleader>c I#<ESC>
-autocmd FileType yml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>:noh<CR>
+autocmd FileType yml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab	
 augroup END
 
 augroup filetype_python
 autocmd!
 autocmd FileType python nnoremap <buffer> <localleader>c I#<ESC>
-autocmd FileType python nnoremap <buffer> <localleader>cp vapkk:s/^/#/<CR>:noh<CR>
+autocmd FileType python nnoremap <buffer> <localleader>cp vapkk:s/^/#/<CR>
 augroup END
 
 augroup filetype_vim
 autocmd!
 autocmd FileType vim  nnoremap <buffer> <localleader>c I"<ESC>
-autocmd FileType vim  nnoremap <buffer> <localleader>cp vapk:s/^/"/<CR>:noh<CR>
+autocmd FileType vim  nnoremap <buffer> <localleader>cp vapk:s/^/"/<CR>
 autocmd FileType vim  nnoremap <buffer> <localleader>fp A------------- {{{<ESC>o<ESC>}o<ESC>I"------------ }}}<ESC>
 autocmd FileType vim  setlocal foldmethod=marker
 augroup END
@@ -70,7 +67,7 @@ let maplocalleader = "-"
 
 "uncomment line/paragraph
 nnoremap <localleader>uc I<ESC>x 
-nnoremap <localleader>ucp vap:s/^.//<CR>:noh<CR>
+nnoremap <localleader>ucp vap:s/^.//<CR>
 "----------------Leader key mappings
 
 "Setting <space> as leader key
@@ -90,7 +87,7 @@ nnoremap <leader>h <C-w>s<C-w>j
 nnoremap <leader>ev <C-w>v<C-w>l:e $MYVIMRC<CR>
 
 "Source .vimrc on the fly
-nnoremap <leader>sv :source $MYVIMRC<cr>:noh<CR>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 "----------------Remappings
