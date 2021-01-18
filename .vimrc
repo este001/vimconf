@@ -19,6 +19,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set smartindent
 set smartcase
+set ignorecase
 set incsearch
 set bg=dark
 set undofile
@@ -34,30 +35,30 @@ let g:indentLine_char = '┊'
 "Comment block and comment line
 augroup filetype_yaml
 autocmd!
-autocmd FileType yaml nnoremap <buffer> <localleader>c I#<ESC>
-autocmd FileType yaml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+	autocmd FileType yaml nnoremap <buffer> <localleader>c I#<ESC>
+	autocmd FileType yaml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>
+	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
 augroup filetype_yml
 autocmd!
-autocmd FileType yml nnoremap <buffer> <localleader>c I#<ESC>
-autocmd FileType yml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>
-autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab	
+	autocmd FileType yml nnoremap <buffer> <localleader>c I#<ESC>
+	autocmd FileType yml nnoremap <buffer> <localleader>cp vapk:s/^/#/<CR>
+	autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab	
 augroup END
 
 augroup filetype_python
 autocmd!
-autocmd FileType python nnoremap <buffer> <localleader>c I#<ESC>
-autocmd FileType python nnoremap <buffer> <localleader>cp vapkk:s/^/#/<CR>
+	autocmd FileType python nnoremap <buffer> <localleader>c I#<ESC>
+	autocmd FileType python nnoremap <buffer> <localleader>cp vapkk:s/^/#/<CR>
 augroup END
 
 augroup filetype_vim
 autocmd!
-autocmd FileType vim  nnoremap <buffer> <localleader>c I"<ESC>
-autocmd FileType vim  nnoremap <buffer> <localleader>cp vapk:s/^/"/<CR>
-autocmd FileType vim  nnoremap <buffer> <localleader>fp A------------- {{{<ESC>o<ESC>}o<ESC>I"------------ }}}<ESC>
-autocmd FileType vim  setlocal foldmethod=marker
+	autocmd FileType vim  nnoremap <buffer> <localleader>c I"<ESC>
+	autocmd FileType vim  nnoremap <buffer> <localleader>cp vapk:s/^/"/<CR>
+	autocmd FileType vim  nnoremap <buffer> <localleader>fp A------------- {{{<ESC>o<ESC>}o<ESC>I"------------ }}}<ESC>
+	autocmd FileType vim  setlocal foldmethod=marker
 augroup END
 
 " }}}
@@ -94,15 +95,19 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 "Save on Ctrl+s 
 nnoremap <C-s> :w <CR>
 
-"Disable -
+"Disable "-
 nnoremap - <nop>
+
+"Make H & L work as go to start/end of line in visual mode
+vnoremap H 0
+vnoremap L $
 
 "Make H & L work as go to start/end of line in normal mode
 nnoremap H 0
 nnoremap L $
 
-"Escaping with jk and kj  
 inoremap jk <ESC>
+"Escaping with jk and kj  
 inoremap kj <ESC>
 
 "Fzf
