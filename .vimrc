@@ -27,6 +27,7 @@ set noswapfile
 set undodir=/home/estefan/.vimundo/
 set noshowmode
 set scrolloff=8
+set mouse=a
 
 let g:indentLine_char = '┊'
 
@@ -78,7 +79,7 @@ let mapleader = " "
 nnoremap <leader>" viw<ESC>a"<ESC>hbi"<ESC>lel
 
 "Surround with fågelvingar
-nnoremap <leader>{ viw<ESC>a<SPACE>}<ESC>hbi{<SPACE>
+nnoremap <leader>{ viw<ESC>a<SPACE>}}"<ESC>bbi"{{<SPACE>
 
 "Split vert/hori and move focus to window
 nnoremap <leader>v <C-w>v<C-w>l
@@ -87,11 +88,17 @@ nnoremap <leader>h <C-w>s<C-w>j
 "Edit .vimrc on the fly
 nnoremap <leader>ev <C-w>v<C-w>l:e $MYVIMRC<CR>
 
+"Edit Todo on the fly
+nnoremap <leader>en <C-w>v<C-w>l:e $HOME/.vim/templates/NOTES<CR><ESC>G
+
 "Source .vimrc on the fly
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 "----------------Remappings
+"UndoTree
+nnoremap <F5> :UndotreeToggle<CR>
+
 "Save on Ctrl+s 
 nnoremap <C-s> :w <CR>
 
@@ -108,10 +115,10 @@ nnoremap L $
 
 inoremap jk <ESC>
 "Escaping with jk and kj  
-inoremap kj <ESC>
+"inoremap kj <ESC>
 
 "Fzf
-nnoremap <C-p> :Files $HOME<CR>
+nnoremap <C-p> :Files<CR>
 let g:fzf_layout = { 'down': '~30%' }
 
 "Move line down
@@ -137,6 +144,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'mbbill/undotree'
 call plug#end()
 
 colorscheme gruvbox
