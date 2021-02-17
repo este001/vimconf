@@ -100,7 +100,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <F5> :UndotreeToggle<CR>
 
 "Save on Ctrl+s 
-nnoremap <C-s> :w <CR>
+nnoremap <HOME> :w <CR>
 
 "Disable "-
 nnoremap - <nop>
@@ -113,7 +113,10 @@ vnoremap L $
 nnoremap H 0
 nnoremap L $
 
-inoremap jk <ESC>
+"inoremap jk <ESC>
+inoremap <END> <ESC>
+vnoremap <END> <ESC>
+nnoremap <END> <ESC>
 "Escaping with jk and kj  
 "inoremap kj <ESC>
 
