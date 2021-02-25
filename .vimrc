@@ -138,7 +138,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 iabbrev adn and
 iabbrev waht what
-iabbrev tehn then
 
 "----------------Plugins
 call plug#begin('~/.vim/plugged')
