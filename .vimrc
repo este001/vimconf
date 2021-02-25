@@ -149,6 +149,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
+Plug 'zigford/vim-powershell'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 colorscheme gruvbox
